@@ -1,0 +1,40 @@
+{
+  "name": "watch-notify",
+  "description": "The omnipresent publish subscribe design pattern, with a few more features such as observe once or the disposable pattern.
+",
+  "version": "0.0.2",
+  "homepage": "https://github.com/flams/watch-notify",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/flams/watch-notify/master/LICENSE"
+    }
+  ],
+  "files": [
+    "LICENSE",
+    "index.js"
+  ],
+  "author": "Olivier Scherrer <pode.fr@gmail.com>",
+  "keywords": [
+    "publish",
+    "subscribe",
+    "watch",
+    "notify",
+    "observable",
+    "observer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:flams/watch-notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/flams/watch-notify/issues"
+  },
+  "scripts": {
+    "test": "jasmine-node test/"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "jasmine-node": "~1.14.3"
+  }
+}
