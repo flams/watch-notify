@@ -1,7 +1,7 @@
 Watch notify
 =============
 
-The omnipresent publish subscribe design pattern, with a few more features such as observe once or the disposable pattern.
+The omnipresent publish subscribe design pattern.
 
 Installation
 ============

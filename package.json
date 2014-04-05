@@ -1,8 +1,7 @@
 {
   "name": "watch-notify",
-  "description": "The omnipresent publish subscribe design pattern, with a few more features such as observe once or the disposable pattern.
-",
-  "version": "0.0.2",
+  "description": "The omnipresent publish subscribe design pattern.",
+  "version": "0.0.1",
   "homepage": "https://github.com/flams/watch-notify",
   "licenses": [
     {
@@ -36,5 +35,9 @@
   "main": "index.js",
   "devDependencies": {
     "jasmine-node": "~1.14.3"
+  },
+  "dependencies": {
+    "simple-loop": "0.0.2",
+    "to-array": "~0.1.4"
   }
 }
