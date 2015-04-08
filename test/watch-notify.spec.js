@@ -3,7 +3,7 @@
 *
 * The MIT License (MIT)
 *
-* Copyright (c) 2014 Olivier Scherrer <pode.fr@gmail.com>
+* Copyright (c) 2014-2015 Olivier Scherrer <pode.fr@gmail.com>
 */
 var WatchNotify = require("../index");
 
@@ -168,7 +168,6 @@ describe("WatchNotify", function () {
     });
 
     describe("notify", function () {
-
         var watchNotify = null,
             testTopic = "testTopic";
 
@@ -246,7 +245,6 @@ describe("WatchNotify", function () {
     });
 
     describe("MiscBehavior", function () {
-
         var watchNotify = null,
             order = null;
 
@@ -274,7 +272,7 @@ describe("WatchNotify", function () {
 
         });
 
-        it("should continue notifying observers even if one of them fails to execute", function () {
+        it("should continue notifying the observers even if one of them fails to execute", function () {
             var errFunc = function () {
                 error++;
             };
@@ -285,13 +283,17 @@ describe("WatchNotify", function () {
                 order.push("observer5");
             });
 
+            spyOn(console, "error");
+
             watchNotify.notify("topic");
+
+            expect(console.error).toHaveBeenCalledWith("[Watch-notify] publishing on 'topic'' threw an" +
+                " error: ReferenceError: error is not defined");
 
             expect(order[3]).toBe("observer5");
         });
 
         it("should accept that observers are removed on the fly", function () {
-
             var obs = watchNotify.watch("topic", function () {
                 order.push("observer4");
                 watchNotify.unwatch(obs);
@@ -315,7 +317,6 @@ describe("WatchNotify", function () {
     });
 
     describe("Isolated", function () {
-
         var watchNotify1 = new WatchNotify(),
             watchNotify2 = new WatchNotify(),
             testTopic = "testTopic";

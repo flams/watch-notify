@@ -65,6 +65,12 @@ Remove the handler before it's even called for the first time:
 watchNotify.unwatch(handle);
 ```
 
+CHANGELOG
+=========
+
+### 0.0.3 - 7 APR 2015
+
+* console.error when an observer throws an error to help with debugging
 
 
 LICENSE

@@ -3,7 +3,7 @@
 *
 * The MIT License (MIT)
 *
-* Copyright (c) 2014 Olivier Scherrer <pode.fr@gmail.com>
+* Copyright (c) 2014-2015 Olivier Scherrer <pode.fr@gmail.com>
 */
 "use strict";
 
@@ -42,8 +42,7 @@ module.exports = function WatchNotifyConstructor() {
             observer = [callback, scope];
 
             observers.push(observer);
-            return [topic,observers.indexOf(observer)];
-
+            return [topic, observers.indexOf(observer)];
         } else {
             return false;
         }
@@ -102,7 +101,9 @@ module.exports = function WatchNotifyConstructor() {
                     if (value) {
                         value[0].apply(value[1] || null, args);
                     }
-                } catch (err) { }
+                } catch (err) {
+                    console.error("[Watch-notify] publishing on '" + topic + "'' threw an error: " + err);
+                }
             });
             return true;
         } else {
